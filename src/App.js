@@ -12,6 +12,17 @@ const App = () => {
   const [items,setItems] = useState(initialState);
   const [editTodo,setEditTodo] = useState();
 
+
+  useEffect(() =>{
+    getTodoInfo();
+   },[]);
+
+   async function getTodoInfo() {
+    const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+    const json = await response.json();
+    setItems(json.slice(0,10));
+   }
+
   useEffect(() =>{
     localStorage.setItem("items",JSON.stringify(items));
   },[items]) 

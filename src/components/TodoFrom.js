@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+
+
 const TodoFrom = ({ input, setInput, items, setItems, editTodo, setEditTodo}) => {
 
   const updateItem = (title, id, completed) =>{
@@ -27,7 +29,6 @@ const TodoFrom = ({ input, setInput, items, setItems, editTodo, setEditTodo}) =>
     const formSumbit = (e) =>{
         e.preventDefault();
 
-        e.preventDefault();
         if(!input){
           alert("please write your task ");
           return;
